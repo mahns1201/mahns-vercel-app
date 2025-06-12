@@ -22,7 +22,9 @@
   "homepage": "https://github.com/mahns1201/mahns.github.io#readme",
   "dependencies": {
     "@notionhq/client": "^3.1.3",
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/postcss": "^4.1.8",
+    "D": "^1.0.0",
     "next": "^15.3.3",
     "postcss": "^8.5.4",
     "react": "^19.1.0",
