@@ -1,26 +1,13 @@
-import { Client } from '@notionhq/client';
+import { Post } from '../types/post';
+import { getNotionDatabases } from './notion-api';
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
-
-const databaseId = process.env.NOTION_DATABASE_ID!;
-
-export async function getAllPosts() {
-  const response = await notion.databases.query({
-    database_id: databaseId,
-    filter: {
-      property: 'Published',
-      checkbox: { equals: true },
-    },
-    // sorts: [
-    //   {
-    //     property: 'Date',
-    //     direction: 'descending',
-    //   },
-    // ],
+export async function getAllPosts(): Promise<Post[]> {
+  const response = await getNotionDatabases({
+    property: 'Published',
+    checkbox: { equals: true },
   });
 
-  // Notion 데이터베이스의 구조에 맞게 데이터 변환
-  return response.results.map((page: any) => {
+  return response.results.map((page) => {
     return {
       id: page.id,
       title: page.properties.Title.title[0]?.plain_text ?? '',
@@ -32,13 +19,10 @@ export async function getAllPosts() {
   });
 }
 
-export async function getPostBySlug(slug: string) {
-  const response = await notion.databases.query({
-    database_id: databaseId,
-    filter: {
-      property: 'Slug',
-      rich_text: { equals: slug },
-    },
+export async function getPostBySlug(slug: string): Promise<Post | null> {
+  const response = await getNotionDatabases({
+    property: 'Slug',
+    rich_text: { equals: slug },
   });
 
   const page = response.results[0];
