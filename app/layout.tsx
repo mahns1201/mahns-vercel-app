@@ -1,5 +1,6 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import SectionContainer from '../components/SectionContainer';
 import '../styles/tailwind.css';
 
 export default function RootLayout({
@@ -9,12 +10,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 w-full max-w-3xl mx-auto px-4 py-8">
-          {children}
-        </main>
-        <Footer />
+      <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
+        <SectionContainer>
+          <Header />
+          <main className="mb-auto">{children}</main>
+          <Footer />
+        </SectionContainer>
       </body>
     </html>
   );
