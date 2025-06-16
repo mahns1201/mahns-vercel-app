@@ -2,10 +2,18 @@ import { Post } from '../types/post';
 import { getNotionDatabases } from './notion-api';
 
 export async function getCurrentPosts(): Promise<Post[]> {
-  const response = await getNotionDatabases({
-    property: 'Published',
-    checkbox: { equals: true },
-  });
+  const response = await getNotionDatabases(
+    {
+      property: 'Published',
+      checkbox: { equals: true },
+    },
+    [
+      {
+        property: 'CreatedAt',
+        direction: 'descending',
+      },
+    ],
+  );
 
   return response.results.map((page) => {
     return {

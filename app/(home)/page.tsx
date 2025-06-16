@@ -1,12 +1,21 @@
 import Link from 'next/link';
 import { getCurrentPosts } from '../../lib/posts';
 import PostList from '../../components/PostList';
+import { Suspense } from 'react';
+import Loading from '../../components/Loading';
 
-const MAX_SIZE = 5;
-
-const Home = async () => {
+const Posts = async () => {
   const posts = await getCurrentPosts();
 
+  return (
+    <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+      {!posts.length && 'No posts found.'}
+      <PostList posts={posts} />
+    </ul>
+  );
+};
+
+const Home = () => {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
@@ -15,21 +24,19 @@ const Home = async () => {
             최신글
           </h1>
         </div>
-        <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-          <PostList posts={posts.slice(0, MAX_SIZE)} />
-        </ul>
+        <Suspense fallback={<Loading />}>
+          <Posts />
+        </Suspense>
       </div>
-      {posts.length > MAX_SIZE && (
-        <div className="flex justify-end text-base font-medium">
-          <Link
-            href="/blog"
-            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            aria-label="All posts"
-          >
-            All Posts &rarr;
-          </Link>
-        </div>
-      )}
+      <div className="flex justify-end text-base font-medium">
+        <Link
+          href="/posts"
+          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          aria-label="모든 게시물"
+        >
+          모든 게시물 &rarr;
+        </Link>
+      </div>
     </>
   );
 };

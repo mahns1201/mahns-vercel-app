@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import PostCard from './PostCard';
+import { Post } from '../types/post';
 
-export default function PostList({ posts }) {
+const PostList = ({ posts }: { posts: Post[] }) => {
   if (!posts.length) return <li>No posts found.</li>;
 
   return (
@@ -19,4 +20,6 @@ export default function PostList({ posts }) {
       ))}
     </>
   );
-}
+};
+
+export default PostList;
