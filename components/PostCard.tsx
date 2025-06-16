@@ -2,12 +2,16 @@ import Link from 'next/link';
 
 export default function PostCard({ post }) {
   return (
-    <div className="p-6 bg-white rounded-lg shadow hover:shadow-md transition">
-      <Link href={`/posts/${post.slug}`}>
-        <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
-      </Link>
-      <p className="text-gray-500 text-sm mb-2">{post.createdAt}</p>
-      <p className="text-gray-700">{post.summary}</p>
-    </div>
+    <>
+      <h2 className="text-2xl font-bold">
+        <Link
+          href={`/blog/${post.slug}`}
+          className="text-gray-900 dark:text-gray-100"
+        >
+          {post.title}
+        </Link>
+      </h2>
+      <p className="text-gray-500 dark:text-gray-400">{post.summary}</p>
+    </>
   );
 }
