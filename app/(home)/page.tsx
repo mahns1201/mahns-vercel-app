@@ -3,6 +3,7 @@ import { getCurrentPosts } from '../../lib/posts';
 import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
+import Title from '../../components/Title';
 
 const Posts = async () => {
   const posts = await getCurrentPosts();
@@ -19,11 +20,7 @@ const Home = () => {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-6xl dark:text-gray-100">
-            최신글
-          </h1>
-        </div>
+        <Title title="최신글" />
         <Suspense fallback={<Loading />}>
           <Posts />
         </Suspense>
