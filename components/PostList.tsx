@@ -10,7 +10,7 @@ const PostList = ({ posts }: { posts: Post[] }) => {
       {posts.map((post) => (
         <li key={post.slug} className="group">
           <Link
-            href={`/blog/${post.slug}`}
+            href={`/posts/${post.slug}`}
             className="block py-12"
             aria-label={`Read more: "${post.title}"`}
           >
