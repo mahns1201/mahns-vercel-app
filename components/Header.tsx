@@ -8,7 +8,7 @@ const navLinks = [
 ];
 
 const Header = () => (
-  <header className="w-full bg-white shadow-sm dark:bg-gray-950">
+  <header>
     <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-6">
       <Link href="/" className="flex items-center space-x-2">
         <Image src="/logo.png" alt="Logo" width={32} height={32} />

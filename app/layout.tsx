@@ -13,7 +13,7 @@ export default function RootLayout({
       <body className="bg-white pl-[calc(100vw-100%)] text-black antialiased dark:bg-gray-950 dark:text-white">
         <SectionContainer>
           <Header />
-          <main className="mb-auto">{children}</main>
+          <main className="mb-auto min-h-screen">{children}</main>
           <Footer />
         </SectionContainer>
       </body>
