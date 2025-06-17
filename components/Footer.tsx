@@ -7,7 +7,7 @@ import siteMetadata from '../data/metadata.js';
 const Footer = () => {
   return (
     <footer>
-      <div className="mt-16 flex flex-col items-center mx-auto max-w-3xl px-4">
+      <div className="my-2 flex flex-col items-center mx-auto max-w-3xl px-4">
         <div className="mb-3 flex space-x-4">
           <Github />
           <Linkedin />
