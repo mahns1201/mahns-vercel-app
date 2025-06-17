@@ -1,6 +1,4 @@
-import { Client } from '@notionhq/client';
-
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
+import notion from '../clients/notion';
 
 export const getNotionDatabases = async (
   filter: any,
