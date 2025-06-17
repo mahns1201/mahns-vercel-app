@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getCurrentPosts } from '../../lib/posts';
+import { getCurrentPosts } from '../../lib/get-current-posts';
 import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';

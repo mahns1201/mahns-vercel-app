@@ -1,4 +1,4 @@
-import { getPostBySlug } from '../../../lib/posts';
+import { getPostBySlug } from '../../../lib/get-post-by-slug';
 import { notFound } from 'next/navigation';
 
 export async function generateMetadata({
@@ -30,7 +30,7 @@ export default async function PostDetailPage({
         <p className="text-gray-400 text-sm mt-2">{post.createdAt}</p>
       </header>
       <section className="mt-6">
-        <div className="prose prose-lg">{post.content}</div>
+        <div className="prose prose-lg">{post.title}</div>
       </section>
     </article>
   );

@@ -1,4 +1,4 @@
-import { getAllPosts } from '../../lib/posts';
+import { getPosts } from '../../lib/get-posts';
 import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Title from '../../components/Title';
 
 const Posts = async () => {
-  const posts = await getAllPosts();
+  const posts = await getPosts();
   return (
     <ul className="divide-y divide-gray-200 dark:divide-gray-700">
       {!posts.length && 'No posts found.'}

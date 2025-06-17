@@ -3,6 +3,6 @@ export interface Post {
   title: string;
   slug: string;
   summary: string;
-  content: string;
   createdAt: string;
+  updatedAt: string;
 }
