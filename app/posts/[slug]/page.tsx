@@ -12,8 +12,9 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
+
   return {
-    title: post?.title ?? '포스트',
+    title: post?.title ?? '',
   };
 }
 
