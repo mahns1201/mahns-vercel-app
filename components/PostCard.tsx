@@ -10,9 +10,7 @@ const PostCard = ({ post }) => {
         <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100">
           {post.title}
         </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-          {post.summary}
-        </p>
+        <p className="p">{post.summary}</p>
       </div>
       <div className="text-xs text-gray-400 dark:text-gray-500 ml-4 whitespace-nowrap">
         {post.createdAt}

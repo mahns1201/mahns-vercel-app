@@ -24,17 +24,17 @@ const Post = async ({ params }) => {
   if (!post) return notFound();
 
   return (
-    <>
+    <div>
       <div className="flex justify-between items-end my-2 pt-6 pb-8 md:my-5">
         <h1 className="h1">{post.title}</h1>
-        <p className="text-gray-400 text-sm mb-1">{post.createdAt}</p>
+        <p className="p">{post.createdAt}</p>
       </div>
-      <section className="mt-6">
+      <div className="mt-6">
         <div className="markdown-body" style={{ backgroundColor: '#030712' }}>
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 
