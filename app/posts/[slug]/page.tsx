@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import 'github-markdown-css/github-markdown.css';
 import { Suspense } from 'react';
-import Loading from '../../../components/Loading';
+import PostLoading from './Loading';
 
 export async function generateMetadata({
   params,
@@ -25,10 +25,10 @@ const Post = async ({ params }) => {
 
   return (
     <>
-      <header className="mb-8 border-b pb-4">
-        <h1 className="text-4xl font-bold text-gray-900">{post.title}</h1>
-        <p className="text-gray-400 text-sm mt-2">{post.createdAt}</p>
-      </header>
+      <div className="flex justify-between items-end my-2 pt-6 pb-8 md:my-5">
+        <h1 className="h1">{post.title}</h1>
+        <p className="text-gray-400 text-sm mb-1">{post.createdAt}</p>
+      </div>
       <section className="mt-6">
         <div className="markdown-body" style={{ backgroundColor: '#030712' }}>
           <ReactMarkdown>{post.content}</ReactMarkdown>
@@ -45,7 +45,7 @@ export default function PostDetailPage({
 }) {
   return (
     <article className="prose mx-auto py-12 px-4 max-w-3xl">
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<PostLoading />}>
         <Post params={params} />
       </Suspense>
     </article>

@@ -7,6 +7,12 @@
   --font-family-sans: 'Inter', sans-serif;
 }
 
+@layer components {
+  .h1 {
+    @apply text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-6xl dark:text-gray-100;
+  }
+}
+
 :root {
   --sh-class: #7aa2f7;
   --sh-sign: #89ddff;
