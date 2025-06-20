@@ -1,11 +1,8 @@
-import { MdStringObject } from 'notion-to-md/build/types';
 import notionMd from '../clients/notion-md';
 
-export const getPostContent = async (
-  pageId: string,
-): Promise<MdStringObject> => {
+export const getPostContent = async (pageId: string): Promise<string> => {
   const mdBlocks = await notionMd.pageToMarkdown(pageId);
-  const mdString = notionMd.toMarkdownString(mdBlocks);
+  const mdObject = notionMd.toMarkdownString(mdBlocks);
 
-  return mdString;
+  return mdObject.parent;
 };

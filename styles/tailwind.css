@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
   --font-family-sans: 'Inter', sans-serif;
@@ -32,7 +35,7 @@ h4 {
 }
 
 pre {
-  background-color: #16161e;
+  background-color: #030712;
   border-radius: 0.5rem;
   overflow-x: auto;
   padding: 1rem;

@@ -1,5 +1,7 @@
 import { getPostBySlug } from '../../../lib/get-post-by-slug';
 import { notFound } from 'next/navigation';
+import ReactMarkdown from 'react-markdown';
+import 'github-markdown-css/github-markdown.css';
 
 export async function generateMetadata({
   params,
@@ -24,13 +26,15 @@ export default async function PostDetailPage({
   if (!post) return notFound();
 
   return (
-    <article className="prose mx-auto py-12 px-4 max-w-3xl bg-white rounded-lg shadow-md">
+    <article className="prose mx-auto py-12 px-4 max-w-3xl">
       <header className="mb-8 border-b pb-4">
         <h1 className="text-4xl font-bold text-gray-900">{post.title}</h1>
         <p className="text-gray-400 text-sm mt-2">{post.createdAt}</p>
       </header>
       <section className="mt-6">
-        <div className="prose prose-lg">{post.title}</div>
+        <div className="markdown-body" style={{ backgroundColor: '#030712' }}>
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+        </div>
       </section>
     </article>
   );
