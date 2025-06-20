@@ -2,6 +2,8 @@ import { getPostBySlug } from '../../../lib/get-post-by-slug';
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import 'github-markdown-css/github-markdown.css';
+import { Suspense } from 'react';
+import Loading from '../../../components/Loading';
 
 export async function generateMetadata({
   params,
@@ -15,18 +17,14 @@ export async function generateMetadata({
   };
 }
 
-export default async function PostDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+const Post = async ({ params }) => {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) return notFound();
 
   return (
-    <article className="prose mx-auto py-12 px-4 max-w-3xl">
+    <>
       <header className="mb-8 border-b pb-4">
         <h1 className="text-4xl font-bold text-gray-900">{post.title}</h1>
         <p className="text-gray-400 text-sm mt-2">{post.createdAt}</p>
@@ -36,6 +34,20 @@ export default async function PostDetailPage({
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </div>
       </section>
+    </>
+  );
+};
+
+export default function PostDetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  return (
+    <article className="prose mx-auto py-12 px-4 max-w-3xl">
+      <Suspense fallback={<Loading />}>
+        <Post params={params} />
+      </Suspense>
     </article>
   );
 }
