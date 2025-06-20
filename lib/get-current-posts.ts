@@ -25,7 +25,7 @@ export const getCurrentPosts = async (): Promise<Post[]> => {
       slug: page.properties.Slug.rich_text[0]?.plain_text ?? '',
       summary: page.properties.Summary.rich_text[0]?.plain_text ?? '',
       thumbnail: page.cover?.external.url ?? '',
-      createdAt: page.created_time ?? '',
+      createdAt: page.created_time.slice(0, 10) ?? '',
       updatedAt: page.last_edited_time ?? '',
     };
   });

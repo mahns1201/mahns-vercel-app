@@ -1,6 +1,6 @@
 const PostCard = ({ post }) => {
   return (
-    <div className="flex items-center gap-6 p-4">
+    <article className="flex items-center gap-6 p-4">
       <img
         src={post.thumbnail ? post.thumbnail : '/logo.png'}
         alt={post.title}
@@ -13,7 +13,7 @@ const PostCard = ({ post }) => {
       <div className="text-xs text-gray-400 dark:text-gray-500 ml-4 whitespace-nowrap">
         {post.createdAt}
       </div>
-    </div>
+    </article>
   );
 };
 

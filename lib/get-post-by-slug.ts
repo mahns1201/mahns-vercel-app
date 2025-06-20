@@ -20,7 +20,7 @@ export const getPostBySlug = async (
     title: page.properties.Title.title[0]?.plain_text ?? '',
     slug: page.properties.Slug.rich_text[0]?.plain_text ?? '',
     summary: page.properties.Summary.rich_text[0]?.plain_text ?? '',
-    createdAt: page.created_time ?? '',
+    createdAt: page.created_time.slice(0, 10) ?? '',
     updatedAt: page.last_edited_time ?? '',
     content,
   };
