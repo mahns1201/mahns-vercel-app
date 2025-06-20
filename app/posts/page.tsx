@@ -3,7 +3,6 @@ import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
 import Link from 'next/link';
-import Title from '../../components/Title';
 
 const Posts = async () => {
   const posts = await getPosts();
@@ -19,7 +18,7 @@ const PostsPage = () => {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <Title title="게시글" />
+        <h1 className="h1 my-2 pt-6 pb-8 md:my-5">게시글</h1>
         <Suspense fallback={<Loading />}>
           <Posts />
         </Suspense>

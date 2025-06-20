@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import SemiTitle from '../../components/SemiTitle';
 
 const AboutPage = () => {
   return (
@@ -15,12 +14,12 @@ const AboutPage = () => {
               height={180}
               className="rounded-full shadow-md mb-4"
             />
-            <SemiTitle semiTitle="서민혁" />
-            <p className="p mt-2">백엔드 개발자</p>
+            <h2 className="h2 sm:text-2xl md:text-4xl">서민혁</h2>
+            <p className="p">백엔드 개발자</p>
           </div>
 
           <section className="mb-20">
-            <h3 className="text-2xl font-semibold mb-3">반갑습니다 🙋🏽‍♂️</h3>
+            <h3 className="h3 mb-3">반갑습니다 🙋🏽‍♂️</h3>
             <p className="p">
               Typescript & Nest.js, Java & Spring 기반의 백엔드 개발자입니다.
               블록체인 마켓 플레이스 어드민, IoT 기기 통신 서버 그리고 통합 관제
@@ -32,7 +31,7 @@ const AboutPage = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-3">口耳之學</h2>
+            <h2 className="h3 mb-3">口耳之學</h2>
             <p className="p">
               “소인의 학문은 귀로 듣고 입으로 나간다”라는 말이 있습니다. 이
               블로그는 개발 중 경험한 내용과 문제 해결 과정을 기록하고
