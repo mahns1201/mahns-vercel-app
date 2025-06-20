@@ -5,11 +5,11 @@ import 'github-markdown-css/github-markdown.css';
 import { Suspense } from 'react';
 import PostLoading from './Loading';
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
+interface Params {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Params) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -39,11 +39,7 @@ const Post = async ({ params }) => {
   );
 };
 
-export default function PostDetailPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default function PostDetailPage({ params }: Params) {
   return (
     <article className="prose mx-auto py-12 px-4 max-w-3xl">
       <Suspense fallback={<PostLoading />}>

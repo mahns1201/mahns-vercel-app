@@ -1,6 +1,8 @@
 import { getPostContent } from './get-post-content';
 import { getNotionDatabases } from '../apis/get-notion-databases';
 import { PostDetail } from '../types/post-detail';
+import { parsePost } from '../utils/parser';
+import { PageObjectResponse } from '@notionhq/client';
 
 export const getPostBySlug = async (
   slug: string,
@@ -13,15 +15,14 @@ export const getPostBySlug = async (
   const page = response.results[0];
   if (!page) return null;
 
+  const post = response.results
+    .filter((r): r is PageObjectResponse => 'properties' in r)
+    .map(parsePost);
+
   const content = await getPostContent(page.id);
 
   return {
-    id: page.id,
-    title: page.properties.Title.title[0]?.plain_text ?? '',
-    slug: page.properties.Slug.rich_text[0]?.plain_text ?? '',
-    summary: page.properties.Summary.rich_text[0]?.plain_text ?? '',
-    createdAt: page.created_time.slice(0, 10) ?? '',
-    updatedAt: page.last_edited_time ?? '',
+    ...post[0],
     content,
   };
 };
