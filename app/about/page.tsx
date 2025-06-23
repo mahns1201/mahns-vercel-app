@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import GoTo from '../../components/GoTo';
 
 const AboutPage = () => {
   return (
@@ -40,6 +41,7 @@ const AboutPage = () => {
           </section>
         </div>
       </div>
+      <GoTo params={{ href: '/', content: '최근 게시물' }} />
     </>
   );
 };

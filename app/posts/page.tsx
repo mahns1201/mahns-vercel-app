@@ -2,7 +2,7 @@ import { getPosts } from '../../lib/get-posts';
 import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
-import Link from 'next/link';
+import GoTo from '../../components/GoTo';
 
 const Posts = async () => {
   const posts = await getPosts();
@@ -23,15 +23,7 @@ const PostsPage = () => {
           <Posts />
         </Suspense>
       </div>
-      <div className="flex justify-end">
-        <Link
-          href="/posts"
-          className="cursor-pointer my-6"
-          aria-label="최근 게시물"
-        >
-          <p>최근 게시물 &rarr;</p>
-        </Link>
-      </div>
+      <GoTo params={{ href: '/', content: '최근 게시물' }} />
     </>
   );
 };

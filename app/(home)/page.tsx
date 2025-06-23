@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import { getCurrentPosts } from '../../lib/get-current-posts';
 import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
+import GoTo from '../../components/GoTo';
 
 const Posts = async () => {
   const posts = await getCurrentPosts();
@@ -23,15 +23,7 @@ const Home = () => {
           <Posts />
         </Suspense>
       </div>
-      <div className="flex justify-end">
-        <Link
-          href="/posts"
-          className="cursor-pointer my-6"
-          aria-label="모든 게시물"
-        >
-          <p>모든 게시물 &rarr;</p>
-        </Link>
-      </div>
+      <GoTo params={{ href: '/posts', content: '모든 게시물' }} />
     </>
   );
 };
