@@ -8,11 +8,7 @@ const PostCard = ({ post }) => {
       />
       <div className="sm:flex-1">
         <h2 className="text-center sm:text-left">{post.title}</h2>
-        <p>
-          {post.summary.length > 150
-            ? post.summary.slice(0, 150) + '...'
-            : post.summary}
-        </p>
+        <p>{post.summary.length > 150 ? `${post.summary}...` : post.summary}</p>
       </div>
       <p>{post.createdAt}</p>
     </article>

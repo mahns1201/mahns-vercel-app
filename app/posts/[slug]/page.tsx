@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
 import PostLoading from './Loading';
 import MdRender from './MdRender';
+import siteMetadata from '../../../data/metadata';
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -13,7 +14,19 @@ export const generateMetadata = async ({ params }: Params) => {
   const post = await getPostBySlug(slug);
 
   return {
-    title: post?.title ?? '',
+    title: post.title,
+    description: post.summary,
+    openGraph: {
+      title: post.title,
+      description: post.summary,
+      type: 'article',
+      publishedTime: post.createdAt,
+      modifiedTime: post.updatedAt,
+      url: `${siteMetadata.url}/posts/${post.slug}`,
+      images: post.thumbnail,
+      siteName: siteMetadata.title,
+      authors: siteMetadata.author,
+    },
   };
 };
 

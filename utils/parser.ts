@@ -7,16 +7,14 @@ import { Post } from '../types/post';
 /**
  * 단일 리치 텍스트 필드에서 plain_text만 추출
  */
-function getPlainTextFromRichText(
+const getPlainTextFromRichText = (
   richText: RichTextItemResponse[] | undefined,
-): string {
-  return richText?.[0]?.plain_text ?? '';
-}
+): string => richText?.[0]?.plain_text ?? '';
 
 /**
  * Notion Page에서 필요한 필드만 추출
  */
-export function parsePost(page: PageObjectResponse): Post {
+export const parsePost = (page: PageObjectResponse): Post => {
   const titleProp = page.properties['Title'];
   const slugProp = page.properties['Slug'];
   const summaryProp = page.properties['Summary'];
@@ -31,7 +29,7 @@ export function parsePost(page: PageObjectResponse): Post {
     ),
     summary: getPlainTextFromRichText(
       summaryProp?.type === 'rich_text' ? summaryProp.rich_text : [],
-    ),
+    ).slice(0, 150),
     thumbnail:
       page.cover?.type === 'external'
         ? page.cover.external.url
@@ -41,4 +39,4 @@ export function parsePost(page: PageObjectResponse): Post {
     createdAt: page.created_time.slice(0, 10),
     updatedAt: page.last_edited_time,
   };
-}
+};
