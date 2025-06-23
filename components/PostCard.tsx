@@ -1,18 +1,20 @@
 const PostCard = ({ post }) => {
   return (
-    <article className="flex items-center gap-6 p-4">
+    <article className="flex flex-col sm:flex-row items-center gap-4 sm:gap-10 px-2 sm:px-4 xl:px-6">
       <img
         src={post.thumbnail ? post.thumbnail : '/logo.png'}
         alt={post.title}
-        className="w-42 h-36 object-cover rounded-md flex-shrink-0"
+        className="w-28 h-21 sm:w-32 sm:h-24 xl:w-40 xl:h-30 object-cover rounded-md flex-shrink-0"
       />
-      <div className="flex-1">
-        <h2>{post.title}</h2>
-        <p>{post.summary}</p>
+      <div className="sm:flex-1">
+        <h2 className="text-center sm:text-left">{post.title}</h2>
+        <p>
+          {post.summary.length > 150
+            ? post.summary.slice(0, 150) + '...'
+            : post.summary}
+        </p>
       </div>
-      <div className="text-xs text-gray-400 dark:text-gray-500 ml-4 whitespace-nowrap">
-        {post.createdAt}
-      </div>
+      <p>{post.createdAt}</p>
     </article>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 import { useDarkMode } from '../hooks/useDarkMode';
 
-export default function ThemeToggle() {
+const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useDarkMode();
 
   return (
@@ -9,4 +9,6 @@ export default function ThemeToggle() {
       {darkMode ? '🌙' : '☀️'}
     </button>
   );
-}
+};
+
+export default ThemeToggle;
