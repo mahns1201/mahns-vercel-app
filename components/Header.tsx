@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
-  { href: '/', label: 'Home' },
   { href: '/posts', label: 'Posts' },
   { href: '/about', label: 'About' },
 ];
@@ -26,6 +26,7 @@ const Header = () => (
             {label}
           </Link>
         ))}
+        <ThemeToggle />
       </nav>
     </div>
   </header>
