@@ -7,18 +7,20 @@ import siteMetadata from '../data/metadata.js';
 const Footer = () => {
   return (
     <footer>
-      <div className="my-2 flex flex-col items-center mx-auto max-w-3xl px-4">
-        <div className="mb-3 flex space-x-4">
+      <div className="flex flex-col items-center py-6 space-y-4">
+        <div className="flex space-x-4">
           <Github />
           <Linkedin />
           <Email />
         </div>
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>{siteMetadata.author}</div>
-          <div>{` • `}</div>
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>{` • `}</div>
-          <Link href="/">{siteMetadata.title}</Link>
+        <div className="flex space-x-2">
+          <p>{siteMetadata.author}</p>
+          <p>{` • `}</p>
+          <p>{`© ${new Date().getFullYear()}`}</p>
+          <p>{` • `}</p>
+          <Link href="/">
+            <p>{siteMetadata.title}</p>
+          </Link>
         </div>
       </div>
     </footer>
