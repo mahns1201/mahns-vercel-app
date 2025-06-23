@@ -27,8 +27,8 @@ const Post = async ({ params }) => {
   return (
     <div>
       <div className="flex justify-between items-end my-2 pt-6 pb-8 md:my-5">
-        <h1 className="h1">{post.title}</h1>
-        <p className="p">{post.createdAt}</p>
+        <h1>{post.title}</h1>
+        <p>{post.createdAt}</p>
       </div>
       <div className="mt-6">
         <div className="markdown-body" style={{ backgroundColor: '#030712' }}>

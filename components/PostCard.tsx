@@ -7,8 +7,8 @@ const PostCard = ({ post }) => {
         className="w-42 h-36 object-cover rounded-md flex-shrink-0"
       />
       <div className="flex-1">
-        <h2 className="h2">{post.title}</h2>
-        <p className="p">{post.summary}</p>
+        <h2>{post.title}</h2>
+        <p>{post.summary}</p>
       </div>
       <div className="text-xs text-gray-400 dark:text-gray-500 ml-4 whitespace-nowrap">
         {post.createdAt}

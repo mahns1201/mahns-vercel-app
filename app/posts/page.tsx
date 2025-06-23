@@ -18,7 +18,7 @@ const PostsPage = () => {
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <h1 className="h1 my-2 pt-6 pb-8 md:my-5">게시글</h1>
+        <h1 className="my-2 pt-6 pb-8 md:my-5">게시글</h1>
         <Suspense fallback={<Loading />}>
           <Posts />
         </Suspense>
