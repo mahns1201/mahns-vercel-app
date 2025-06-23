@@ -5,10 +5,7 @@ const PostLoading = () => (
       <div className="h-4 w-24 bg-gray-200 dark:bg-gray-600 rounded" />
     </div>
     <section className="mt-6">
-      <div
-        className="markdown-body space-y-4"
-        style={{ backgroundColor: '#030712', minHeight: 300 }}
-      >
+      <div className="space-y-4">
         <div className="h-6 w-5/6 bg-gray-300 dark:bg-gray-700 rounded" />
         <div className="h-6 w-4/6 bg-gray-300 dark:bg-gray-700 rounded" />
         <div className="h-6 w-3/6 bg-gray-300 dark:bg-gray-700 rounded" />
