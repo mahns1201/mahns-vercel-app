@@ -1,14 +1,21 @@
 'use client';
-import { useDarkMode } from '../hooks/useDarkMode';
+
+import { useEffect } from 'react';
+import { useDarkMode } from '../contexts/ThemeProvider';
 
 const ThemeToggle = () => {
-  const [darkMode, setDarkMode] = useDarkMode();
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
-  return (
-    <button onClick={() => setDarkMode(!darkMode)}>
-      {darkMode ? '🌙' : '☀️'}
-    </button>
-  );
+  useEffect(() => {
+    const root = window.document.documentElement;
+    if (darkMode) {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+  }, [darkMode]);
+
+  return <button onClick={toggleDarkMode}>{darkMode ? '🌙' : '☀️'}</button>;
 };
 
 export default ThemeToggle;
