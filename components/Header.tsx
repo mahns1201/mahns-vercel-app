@@ -9,19 +9,19 @@ const navLinks = [
 
 const Header = () => (
   <header>
-    <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-6">
-      <Link href="/" className="flex items-center space-x-2">
+    <div className="flex justify-between items-center py-6">
+      <Link href="/" className="flex space-x-2">
         <Image src="/logo.png" alt="Logo" width={32} height={32} />
-        <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
+        <span className="flex items-center text-base sm:text-xl font-bold text-gray-900 dark:text-gray-100 cursor-pointer">
           만쓰 이모저모
         </span>
       </Link>
-      <nav className="flex items-center space-x-6">
+      <nav className="flex items-center space-x-2 sm:space-x-6">
         {navLinks.map(({ href, label }) => (
           <Link
             key={href}
             href={href}
-            className="text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400 font-small font-bold"
+            className="text-sm sm:text-lg font-bold text-gray-900 dark:text-gray-100 cursor-pointer"
           >
             {label}
           </Link>
