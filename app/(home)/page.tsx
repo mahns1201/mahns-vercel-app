@@ -8,8 +8,7 @@ const Posts = async () => {
   const posts = await getCurrentPosts();
 
   return (
-    <ul className="divide-y divide-gray-200 dark:divide-gray-700">
-      {!posts.length && 'No posts found.'}
+    <ul>
       <PostList posts={posts} />
     </ul>
   );
@@ -24,13 +23,13 @@ const Home = () => {
           <Posts />
         </Suspense>
       </div>
-      <div className="flex justify-end text-base font-medium">
+      <div className="flex justify-end">
         <Link
           href="/posts"
-          className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          className="cursor-pointer my-6"
           aria-label="모든 게시물"
         >
-          모든 게시물 &rarr;
+          <p>모든 게시물 &rarr;</p>
         </Link>
       </div>
     </>

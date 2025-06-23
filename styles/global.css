@@ -21,25 +21,15 @@
     @apply text-2xl font-semibold text-gray-900 dark:text-gray-100
   }
   p {
-    @apply text-sm text-gray-500 dark:text-gray-500 leading-relaxed
+    @apply text-sm text-gray-900 dark:text-gray-500 leading-relaxed
+  }
+  ul {
+    @apply divide-y divide-gray-200 dark:divide-gray-700
+  }
+  li {
+    @apply text-base text-gray-900 dark:text-gray-500
   }
   button {
     @apply cursor-pointer;
   }
 }
-
-@layer components {
-  .h1 {
-    @apply text-4xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-6xl dark:text-gray-100;
-  }
-  .h2 {
-    @apply text-3xl font-bold text-gray-800 dark:text-gray-100
-  }
-  .h3 {
-    @apply text-2xl font-semibold text-gray-700 dark:text-gray-100
-  }
-  .p {
-    @apply text-sm text-gray-500 dark:text-gray-400 leading-relaxed
-  }
-}
-
