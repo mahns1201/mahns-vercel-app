@@ -6,6 +6,7 @@ import SectionContainer from '../components/SectionContainer';
 import siteMetadata from '../data/metadata';
 import '../styles/global.css';
 import Head from './Head';
+import Analytics from '../components/Analytics';
 
 export const metadata: Metadata = {
   title: {
@@ -25,6 +26,7 @@ export default function RootLayout({
       <Head />
       <body className="pl-[calc(100vw-100%)] bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <DarkModeProvider>
+          <Analytics />
           <SectionContainer>
             <Header />
             <main className="mb-auto min-h-screen">{children}</main>
