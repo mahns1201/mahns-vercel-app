@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mahns.vercel.app/
+
+# Sitemaps
+Sitemap: https://mahns.vercel.app/sitemap.xml
