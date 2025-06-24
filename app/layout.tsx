@@ -7,6 +7,7 @@ import siteMetadata from '../data/metadata';
 import '../styles/global.css';
 import Head from './Head';
 import Analytics from '../components/Analytics';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +27,9 @@ export default function RootLayout({
       <Head />
       <body className="pl-[calc(100vw-100%)] bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <DarkModeProvider>
-          <Analytics />
+          <Suspense fallback={null}>
+            <Analytics />
+          </Suspense>
           <SectionContainer>
             <Header />
             <main className="mb-auto min-h-screen">{children}</main>

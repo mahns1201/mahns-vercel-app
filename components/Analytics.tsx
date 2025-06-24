@@ -9,15 +9,13 @@ export default function Analytics() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // URL 변경 감지
   useEffect(() => {
-    const url = pathname + (searchParams.toString() ? `?${searchParams}` : '');
+    if (!GA_ID || typeof window.gtag !== 'function') return;
 
-    if (typeof window.gtag === 'function') {
-      window.gtag('config', GA_ID, {
-        page_path: url,
-      });
-    }
+    const url = pathname + (searchParams.toString() ? `?${searchParams}` : '');
+    window.gtag('config', GA_ID, {
+      page_path: url,
+    });
   }, [pathname, searchParams]);
 
   return null;
