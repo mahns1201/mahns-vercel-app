@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getCurrentPosts } from '../../lib/get-current-posts';
 import PostList from '../../components/PostList';
 import { Suspense } from 'react';
