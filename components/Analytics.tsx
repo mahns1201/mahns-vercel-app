@@ -5,7 +5,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 
 const GA_ID = process.env.GA_ID || '';
 
-export default function Analytics() {
+const Analytics = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -20,3 +20,5 @@ export default function Analytics() {
 
   return null;
 }
+
+export default Analytics;
