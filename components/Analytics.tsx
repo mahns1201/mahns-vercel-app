@@ -19,6 +19,6 @@ const Analytics = () => {
   }, [pathname, searchParams]);
 
   return null;
-}
+};
 
 export default Analytics;

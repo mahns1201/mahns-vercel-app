@@ -8,7 +8,7 @@ const Email = ({ size = 24 }) => {
         width={size}
         height={size}
         className="hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-700 dark:text-gray-200"
-        alt='email'
+        alt="email"
       />
     </a>
   );
