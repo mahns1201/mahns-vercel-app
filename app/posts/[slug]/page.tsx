@@ -38,7 +38,7 @@ const Post = async ({ params }) => {
 
   return (
     <>
-      <div className="flex justify-between items-end my-2 pt-6 pb-8 md:my-5">
+      <div className="flex flex-col justify-between space-y-2 sm:space-y-5 items-end my-2 pt-6 pb-8 md:my-5">
         <h1>{post.title}</h1>
         <p>{post.createdAt}</p>
       </div>

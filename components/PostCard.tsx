@@ -7,11 +7,11 @@ const PostCard = ({ post }) => {
         alt={post.title ? post.title : '무제'}
         className="w-28 h-21 sm:w-32 sm:h-24 xl:w-40 xl:h-30 object-cover rounded-md flex-shrink-0"
       />
-      <div className="sm:flex-1">
-        <h2 className="text-center sm:text-left">{post.title}</h2>
+      <div className="sm:flex-1 space-y-2">
+        <h2>{post.title}</h2>
         <p>{post.summary.length > 150 ? `${post.summary}...` : post.summary}</p>
       </div>
-      <p>{post.createdAt}</p>
+      <p className="ml-auto">{post.createdAt}</p>
     </article>
   );
 };
