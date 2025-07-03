@@ -32,4 +32,15 @@
   button {
     @apply cursor-pointer;
   }
+
+  .markdown-body ol {
+    @apply list-none pl-6;
+  }
+  .markdown-body ol li {
+    @apply relative pl-3;
+  }
+  .markdown-body ol li::before {
+    content: '•';
+    @apply dark:text-gray-300 font-bold absolute left-0 top-0;
+  }
 }
