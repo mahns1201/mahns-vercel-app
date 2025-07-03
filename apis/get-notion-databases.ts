@@ -2,7 +2,7 @@ import notion from '../clients/notion';
 
 export const getNotionDatabases = async (
   filter: any,
-  sorts?: any,
+  sorts: any,
   pageSize = 5,
 ) => {
   return notion.databases.query({

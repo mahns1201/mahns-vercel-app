@@ -7,10 +7,14 @@ import { PageObjectResponse } from '@notionhq/client';
 export const getPostBySlug = async (
   slug: string,
 ): Promise<PostDetail | null> => {
-  const response = await getNotionDatabases({
-    property: 'Slug',
-    rich_text: { equals: slug },
-  });
+  const response = await getNotionDatabases(
+    {
+      property: 'Slug',
+      rich_text: { equals: slug },
+    },
+    null,
+    1,
+  );
 
   const page = response.results[0];
   if (!page) return null;
