@@ -12,7 +12,7 @@ export const getPostBySlug = async (
       property: 'Slug',
       rich_text: { equals: slug },
     },
-    null,
+    [],
     1,
   );
 
