@@ -1,7 +1,8 @@
 import Head from 'next/head';
 
 const NEXT_PUBLIC_GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
-const NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE || '';
+const NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE =
+  process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE || '';
 
 const SeoHead = () => {
   return (
@@ -23,7 +24,10 @@ const SeoHead = () => {
       />
 
       {/* Google Search Console */}
-      <meta name="google-site-verification" content={NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE} />
+      <meta
+        name="google-site-verification"
+        content={NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE}
+      />
 
       {/* Favicon */}
       <link
