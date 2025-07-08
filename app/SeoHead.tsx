@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-const GA_ID = process.env.GA_ID || '';
-const GOOGLE_SEARCH_CONSOLE = process.env.GOOGLE_SEARCH_CONSOLE || '';
+const NEXT_PUBLIC_GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
+const NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE || '';
 
 const SeoHead = () => {
   return (
@@ -9,7 +9,7 @@ const SeoHead = () => {
       {/* Google Analytics */}
       <script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GA_ID}`}
       />
       <script
         dangerouslySetInnerHTML={{
@@ -17,13 +17,13 @@ const SeoHead = () => {
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${GA_ID}');
+              gtag('config', '${NEXT_PUBLIC_GA_ID}');
             `,
         }}
       />
 
       {/* Google Search Console */}
-      <meta name="google-site-verification" content={GOOGLE_SEARCH_CONSOLE} />
+      <meta name="google-site-verification" content={NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE} />
 
       {/* Favicon */}
       <link
