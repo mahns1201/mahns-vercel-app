@@ -5,7 +5,7 @@ import { DarkModeProvider } from '../contexts/ThemeProvider';
 import SectionContainer from '../components/SectionContainer';
 import siteMetadata from '../data/metadata';
 import '../styles/global.css';
-import Head from './Head';
+import SeoHead from './SeoHead';
 import Analytics from '../components/Analytics';
 import { Suspense } from 'react';
 
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <Head />
+      <SeoHead />
       <body className="pl-[calc(100vw-100%)] bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <DarkModeProvider>
           <Suspense fallback={null}>

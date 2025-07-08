@@ -1,9 +1,11 @@
+import Head from 'next/head';
+
 const GA_ID = process.env.GA_ID || '';
 const GOOGLE_SEARCH_CONSOLE = process.env.GOOGLE_SEARCH_CONSOLE || '';
 
-const Head = () => {
+const SeoHead = () => {
   return (
-    <head>
+    <Head>
       {/* Google Analytics */}
       <script
         async
@@ -36,8 +38,8 @@ const Head = () => {
         sizes="32x32"
         href="/favicon-32x32.png"
       />
-    </head>
+    </Head>
   );
 };
 
-export default Head;
+export default SeoHead;
