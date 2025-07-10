@@ -7,9 +7,8 @@ import siteMetadata from '../data/metadata';
 import '../styles/global.css';
 import Analytics from '../components/Analytics';
 import { Suspense } from 'react';
-import Script from 'next/script';
+import GoogleAnalytics from '../components/GoogleAnalytics';
 
-const NEXT_PUBLIC_GA_ID = process.env.NEXT_PUBLIC_GA_ID || '';
 const NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE =
   process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE || '';
 
@@ -35,7 +34,6 @@ export const metadata: Metadata = {
     { rel: 'shortcut icon', url: '/favicon.ico' },
     { rel: 'apple-touch-icon', url: '/apple-touch-icon.png' },
   ],
-  manifest: '/site.webmanifest',
   verification: {
     google: NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE,
   },
@@ -48,29 +46,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <head>
-        {/* Google Analytics */}
-        {NEXT_PUBLIC_GA_ID && (
-          <>
-            <Script
-              async
-              src={`https://www.googletagmanager.com/gtag/js?id=${NEXT_PUBLIC_GA_ID}`}
-            />
-            <Script
-              id="gtag-init"
-              dangerouslySetInnerHTML={{
-                __html: `
-                  window.dataLayer = window.dataLayer || [];
-                  function gtag(){dataLayer.push(arguments);}
-                  gtag('js', new Date());
-                  gtag('config', '${NEXT_PUBLIC_GA_ID}');
-                `,
-              }}
-            />
-          </>
-        )}
-      </head>
       <body className="pl-[calc(100vw-100%)] bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
+        <GoogleAnalytics />
         <DarkModeProvider>
           <Suspense fallback={null}>
             <Analytics />
