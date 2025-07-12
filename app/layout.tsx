@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   ],
   verification: {
     google: NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE,
+    other: {
+      'naver-site-verification': process.env.NEXT_PUBLIC_NAVER_VERIFICATION,
+    },
   },
 };
 
