@@ -3,6 +3,7 @@ import { getNotionDatabases } from '../apis/get-notion-databases';
 import { PostDetail } from '../types/post-detail';
 import { parsePost } from '../utils/parser';
 import { PageObjectResponse } from '@notionhq/client';
+import readingTime from 'reading-time';
 
 export const getPostBySlug = async (
   slug: string,
@@ -24,9 +25,11 @@ export const getPostBySlug = async (
     .map(parsePost);
 
   const content = await getPostContent(page.id);
+  const stats = readingTime(content);
 
   return {
     ...post[0],
     content,
+    stats,
   };
 };

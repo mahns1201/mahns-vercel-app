@@ -40,7 +40,11 @@ const Post = async ({ params }) => {
     <>
       <div className="flex flex-col justify-between space-y-2 sm:space-y-5 items-end my-2 pt-6 pb-8 md:my-5">
         <h1 className="text-justify">{post.title}</h1>
-        <p>{post.createdAt}</p>
+        <div className="flex space-x-1">
+          <p>{post.createdAt}</p>
+          <p>•</p>
+          <p>{post.stats.text} ☕️</p>
+        </div>
       </div>
       <div className="mt-6">
         <MdRender content={post.content} />
