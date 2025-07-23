@@ -41,7 +41,7 @@ const AboutPage = () => {
           </section>
         </div>
       </div>
-      <GoTo params={{ href: '/', content: '최근 게시물' }} />
+      <GoTo params={{ href: '/', content: '고정 게시물' }} />
     </>
   );
 };

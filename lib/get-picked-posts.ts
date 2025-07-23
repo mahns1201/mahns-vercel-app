@@ -3,21 +3,29 @@ import { getNotionDatabases } from '../apis/get-notion-databases';
 import { Post } from '../types/post';
 import { parsePost } from '../utils/parser';
 
-const PAGE_SIZE = 5;
+const MAX_PAGE_SIZE = 5;
 
-export const getCurrentPosts = async (): Promise<Post[]> => {
+export const getPickedPosts = async (): Promise<Post[]> => {
   const response = await getNotionDatabases(
     {
-      property: 'Published',
-      checkbox: { equals: true },
+      and: [
+        {
+          property: 'Published',
+          checkbox: { equals: true },
+        },
+        {
+          property: 'Picked',
+          checkbox: { equals: true },
+        },
+      ],
     },
     [
       {
-        property: 'CreatedAt',
-        direction: 'descending',
+        property: 'Order',
+        direction: 'ascending',
       },
     ],
-    PAGE_SIZE,
+    MAX_PAGE_SIZE,
   );
 
   return response.results
