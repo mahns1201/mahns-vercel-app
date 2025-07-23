@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import PostLoading from './Loading';
 import MdRender from './MdRender';
 import siteMetadata from '../../../data/metadata';
+import Tags from '../../../components/Tags';
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -38,9 +39,10 @@ const Post = async ({ params }) => {
 
   return (
     <>
-      <div className="flex flex-col justify-between space-y-2 sm:space-y-5 items-end my-2 pt-6 pb-8 md:my-5">
+      <div className="flex flex-col space-y-2 sm:space-y-5 my-2 pt-6 pb-8 md:my-5">
         <h1 className="text-justify">{post.title}</h1>
-        <div className="flex space-x-1">
+        <Tags tags={post.tags} />
+        <div className="flex space-x-1 ml-auto">
           <p>{post.createdAt}</p>
           <p>•</p>
           <p>{post.stats.text} ☕️</p>
