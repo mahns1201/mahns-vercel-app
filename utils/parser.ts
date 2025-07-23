@@ -18,6 +18,8 @@ export const parsePost = (page: PageObjectResponse): Post => {
   const titleProp = page.properties['Title'];
   const slugProp = page.properties['Slug'];
   const summaryProp = page.properties['Summary'];
+  const createdAtProp = page.properties['CreatedAt'];
+  const tagsProp = page.properties['Tags'];
 
   return {
     id: page.id,
@@ -30,13 +32,20 @@ export const parsePost = (page: PageObjectResponse): Post => {
     summary: getPlainTextFromRichText(
       summaryProp?.type === 'rich_text' ? summaryProp.rich_text : [],
     ).slice(0, 150),
+    tags:
+      tagsProp?.type === 'multi_select'
+        ? tagsProp.multi_select.map((tag) => tag.name)
+        : [],
     thumbnail:
       page.cover?.type === 'external'
         ? page.cover.external.url
         : page.cover?.type === 'file'
           ? page.cover.file.url
           : '',
-    createdAt: page.created_time.slice(0, 10),
+    createdAt:
+      createdAtProp?.type === 'date'
+        ? createdAtProp.date.start.slice(0, 10)
+        : '',
     updatedAt: page.last_edited_time,
   };
 };

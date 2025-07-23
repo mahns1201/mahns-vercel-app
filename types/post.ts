@@ -4,6 +4,7 @@ export interface Post {
   slug: string;
   summary: string;
   thumbnail: string;
+  tags: string[];
   createdAt: string;
   updatedAt: string;
 }
