@@ -23,11 +23,13 @@ const HomePage = () => {
       <h1 className="my-2 pt-6 pb-8 md:my-5">고정 게시물</h1>
       <Suspense fallback={<Loading />}>
         <div className="flex">
-          <Posts />
+          <div className="flex flex-col">
+            <Posts />
+            <GoTo params={{ href: '/posts', content: '모든 게시물' }} />
+          </div>
           <SidebarTags />
         </div>
       </Suspense>
-      <GoTo params={{ href: '/posts', content: '모든 게시물' }} />
     </>
   );
 };
