@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import GoTo from '../../components/GoTo';
+import SectionContainer from '../../components/layouts/SectionContainer';
 
 const AboutPage = () => {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 xl:px-0">
+    <SectionContainer>
       <div className="flex flex-col items-center mb-20">
         <Image
           src="/logo-white.png"
@@ -38,7 +39,7 @@ const AboutPage = () => {
       </section>
 
       <GoTo params={{ href: '/', content: '고정 게시물' }} />
-    </div>
+    </SectionContainer>
   );
 };
 

@@ -1,5 +1,7 @@
+import SectionContainer from "../../../components/layouts/SectionContainer";
+
 const PostLoading = () => (
-  <>
+  <SectionContainer>
     <div className="flex justify-between items-end my-2 pt-6 pb-8 md:my-5 animate-pulse">
       <div className="h-10 w-2/3 bg-gray-300 dark:bg-gray-700 rounded mb-2" />
       <div className="h-4 w-24 bg-gray-200 dark:bg-gray-600 rounded" />
@@ -13,7 +15,7 @@ const PostLoading = () => (
         <div className="h-6 w-1/2 bg-gray-300 dark:bg-gray-700 rounded" />
       </div>
     </section>
-  </>
+  </SectionContainer>
 );
 
 export default PostLoading;
