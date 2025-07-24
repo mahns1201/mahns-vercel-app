@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 import { getPosts } from '../../lib/get-posts';
 import PostList from '../../components/PostList';
 import { Suspense } from 'react';
-import Loading from '../../components/Loading';
+import PostsLoading from './Loading';
 import GoTo from '../../components/GoTo';
 import SidebarTags from '../../components/layouts/SidebarTags';
 
@@ -20,8 +20,8 @@ const Posts = async () => {
 const PostsPage = () => {
   return (
     <>
-      <h1 className="my-2 pt-6 pb-8 md:my-5">게시물</h1>
-      <Suspense fallback={<Loading />}>
+      <h1 className="my-2 pt-6 pb-8 md:my-5">모든 게시물</h1>
+      <Suspense fallback={<PostsLoading />}>
         <div className="flex">
           <div className="flex flex-col">
             <Posts />
