@@ -1,13 +1,12 @@
+import Link from 'next/link';
+
 const TagList = ({ tags }: { tags: string[] }) => {
   return (
-    <div className="flex flex-wrap gap-1">
+    <div className="flex flex-wrap gap-2">
       {tags.map((tag) => (
-        <span
-          key={tag}
-          className="rounded-full px-3 py-1 bg-[var(--primary-color)] text-gray-300"
-        >
-          #{tag}
-        </span>
+        <Link key={tag} href={`/tags/${tag}`} className="hover:underline">
+          <p>#{tag}</p>
+        </Link>
       ))}
     </div>
   );
