@@ -7,7 +7,11 @@ const Tags = async () => {
   return (
     <nav className="flex flex-col">
       {tags.map((tag) => (
-        <Link href={`/tags/${tag}`} key={tag} className={`block py-1`}>
+        <Link
+          href={`/tags/${tag}`}
+          key={tag}
+          className={`block py-1 hover:bg-gray-100 dark:hover:bg-gray-700`}
+        >
           <p>#{tag}</p>
         </Link>
       ))}

@@ -11,7 +11,7 @@ const PostList = ({ posts }: { posts: Post[] }) => {
         <li key={post.slug} className="group">
           <Link
             href={`/posts/${post.slug}`}
-            className="block py-6"
+            className="block py-6 hover:bg-gray-100 dark:hover:bg-gray-700"
             aria-label={`Read more: "${post.title}"`}
           >
             <PostCard post={post} />

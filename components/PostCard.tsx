@@ -2,7 +2,7 @@ import TagList from './TagList';
 
 const PostCard = ({ post }) => {
   return (
-    <article className="flex flex-col sm:flex-row items-center gap-4 ">
+    <article className="flex flex-col sm:flex-row items-center gap-4">
       <img
         src={post.thumbnail ? post.thumbnail : '/logo.png'}
         alt={post.title ? post.title : '무제'}
