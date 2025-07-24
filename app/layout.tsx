@@ -2,12 +2,12 @@ import { Metadata } from 'next';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { DarkModeProvider } from '../contexts/ThemeProvider';
-import SectionContainer from '../components/SectionContainer';
 import siteMetadata from '../data/metadata';
 import '../styles/global.css';
 import Analytics from '../components/Analytics';
 import { Suspense } from 'react';
 import GoogleAnalytics from '../components/GoogleAnalytics';
+import SectionContainer from '../components/SectionContainer';
 
 const NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE =
   process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE || '';

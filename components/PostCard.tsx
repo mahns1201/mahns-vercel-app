@@ -2,7 +2,7 @@ import Tags from './Tags';
 
 const PostCard = ({ post }) => {
   return (
-    <article className="flex flex-col sm:flex-row items-center gap-4 px-2 sm:px-4 xl:px-6">
+    <article className="flex flex-col sm:flex-row items-center gap-4 ">
       <img
         src={post.thumbnail ? post.thumbnail : '/logo.png'}
         alt={post.title ? post.title : '무제'}

@@ -5,6 +5,7 @@ import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
 import GoTo from '../../components/GoTo';
+import SidebarTags from '../../components/SidebarTags';
 
 const Posts = async () => {
   const posts = await getPosts();
@@ -19,12 +20,13 @@ const Posts = async () => {
 const PostsPage = () => {
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <h1 className="my-2 pt-6 pb-8 md:my-5">게시물</h1>
-        <Suspense fallback={<Loading />}>
+      <h1 className="my-2 pt-6 pb-8 md:my-5">게시물</h1>
+      <Suspense fallback={<Loading />}>
+        <div className="flex">
           <Posts />
-        </Suspense>
-      </div>
+          <SidebarTags />
+        </div>
+      </Suspense>
       <GoTo params={{ href: '/', content: '고정 게시물' }} />
     </>
   );
