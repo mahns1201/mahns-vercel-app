@@ -1,4 +1,4 @@
-import metadata from '../data/metadata';
+import metadata from '../../data/metadata';
 import Image from '/public/email.svg';
 
 const Email = ({ size = 24 }) => {

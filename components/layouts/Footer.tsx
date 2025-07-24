@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Linkedin from './Linkedin';
-import Email from './Email';
-import Github from './Github';
-import siteMetadata from '../data/metadata.js';
+import Linkedin from '../images/Linkedin';
+import Email from '../images/Email';
+import Github from '../images/Github';
+import siteMetadata from '../../data/metadata.js';
 
 const Footer = () => {
   return (

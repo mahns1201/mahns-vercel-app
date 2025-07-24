@@ -1,4 +1,4 @@
-import metadata from '../data/metadata.js';
+import metadata from '../../data/metadata.js';
 import Image from '/public/linkedin.svg';
 
 const Linkedin = ({ size = 24 }) => {

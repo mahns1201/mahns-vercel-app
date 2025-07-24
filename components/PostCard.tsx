@@ -1,4 +1,4 @@
-import Tags from './Tags';
+import TagList from './TagList';
 
 const PostCard = ({ post }) => {
   return (
@@ -11,7 +11,7 @@ const PostCard = ({ post }) => {
       <div className="sm:flex-1 space-y-2">
         <h2>{post.title}</h2>
         <p>{post.summary.length > 150 ? `${post.summary}...` : post.summary}</p>
-        <Tags tags={post.tags} />
+        <TagList tags={post.tags} />
         <p className="text-right">{post.createdAt}</p>
       </div>
     </article>

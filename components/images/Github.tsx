@@ -1,4 +1,4 @@
-import metadata from '../data/metadata';
+import metadata from '../../data/metadata';
 import Image from '/public/github.svg';
 
 const GitHub = ({ size = 24 }) => {

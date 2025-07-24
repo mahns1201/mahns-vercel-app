@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useDarkMode } from '../contexts/ThemeProvider';
+import { useDarkMode } from '../../contexts/ThemeProvider';
 
 const ThemeToggle = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();

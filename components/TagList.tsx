@@ -1,4 +1,4 @@
-const Tags = ({ tags }: { tags: string[] }) => {
+const TagList = ({ tags }: { tags: string[] }) => {
   return (
     <div className="flex flex-wrap gap-1">
       {tags.map((tag) => (
@@ -13,4 +13,4 @@ const Tags = ({ tags }: { tags: string[] }) => {
   );
 };
 
-export default Tags;
+export default TagList;

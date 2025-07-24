@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getTags } from '../lib/get-tags';
+import { getTags } from '../../lib/get-tags';
 
 const Tags = async () => {
   const tags = await getTags();

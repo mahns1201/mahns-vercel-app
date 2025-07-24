@@ -1,13 +1,13 @@
 import { Metadata } from 'next';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Footer from '../components/layouts/Footer';
+import Header from '../components/layouts/Header';
 import { DarkModeProvider } from '../contexts/ThemeProvider';
 import siteMetadata from '../data/metadata';
 import '../styles/global.css';
-import Analytics from '../components/Analytics';
+import Analytics from '../components/seo/Analytics';
 import { Suspense } from 'react';
-import GoogleAnalytics from '../components/GoogleAnalytics';
-import SectionContainer from '../components/SectionContainer';
+import GoogleAnalytics from '../components/seo/GoogleAnalytics';
+import MainContainer from '../components/layouts/MainContainer';
 
 const NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE =
   process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE || '';
@@ -55,11 +55,11 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <Analytics />
           </Suspense>
-          <SectionContainer>
+          <MainContainer>
             <Header />
             <main className="mb-auto min-h-screen">{children}</main>
             <Footer />
-          </SectionContainer>
+          </MainContainer>
         </DarkModeProvider>
       </body>
     </html>

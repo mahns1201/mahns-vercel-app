@@ -5,7 +5,7 @@ import PostList from '../../components/PostList';
 import { Suspense } from 'react';
 import Loading from '../../components/Loading';
 import GoTo from '../../components/GoTo';
-import SidebarTags from '../../components/SidebarTags';
+import SidebarTags from '../../components/layouts/SidebarTags';
 
 const Posts = async () => {
   const posts = await getPosts();
