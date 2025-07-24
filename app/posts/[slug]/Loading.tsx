@@ -1,4 +1,4 @@
-import SectionContainer from "../../../components/layouts/SectionContainer";
+import SectionContainer from '../../../components/layouts/SectionContainer';
 
 const PostLoading = () => (
   <SectionContainer>
