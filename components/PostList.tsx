@@ -5,9 +5,9 @@ import { Post } from '../types/post';
 import { useRouter } from 'next/navigation';
 
 const PostList = ({ posts }: { posts: Post[] }) => {
-  if (!posts.length) return <li>No posts found.</li>;
-
   const router = useRouter();
+
+  if (!posts.length) return <li>No posts found.</li>;
 
   const handlePostClick = (slug: string) => {
     router.push(`/posts/${slug}`);
