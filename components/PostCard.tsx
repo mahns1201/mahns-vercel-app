@@ -6,7 +6,7 @@ const PostCard = ({ post }) => {
       <img
         src={post.thumbnail ? post.thumbnail : '/logo.png'}
         alt={post.title ? post.title : '무제'}
-        className="w-60 h-40 sm:w-54 sm:h-42 object-cover rounded-md flex-shrink-0"
+        className="w-full h-60 sm:w-54 sm:h-42 object-cover rounded-md flex-shrink-0"
       />
       <div className="sm:flex-1 space-y-2">
         <h2>{post.title}</h2>
