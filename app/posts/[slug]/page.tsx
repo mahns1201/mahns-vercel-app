@@ -42,7 +42,9 @@ const Post = async ({ params }) => {
     <>
       <div className="flex flex-col space-y-2 sm:space-y-5 my-2 pt-6 pb-8 md:my-5">
         <h1 className="text-justify">{post.title}</h1>
-        <TagList tags={post.tags} />
+        <div className="flex flex-wrap gap-2">
+          <TagList tags={post.tags} styles="hover:underline" />
+        </div>
         <div className="flex space-x-1 ml-auto">
           <p>{post.createdAt}</p>
           <p>•</p>

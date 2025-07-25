@@ -1,20 +1,15 @@
-import Link from 'next/link';
 import { getTags } from '../../lib/get-tags';
+import TagList from '../TagList';
 
 const Tags = async () => {
   const tags = await getTags();
 
   return (
     <nav className="flex flex-col">
-      {tags.map((tag) => (
-        <Link
-          href={`/tags/${tag}`}
-          key={tag}
-          className={`block py-1 hover:bg-gray-100 dark:hover:bg-gray-700`}
-        >
-          <p>#{tag}</p>
-        </Link>
-      ))}
+      <TagList
+        tags={tags}
+        styles={'block py-1 hover:bg-gray-100 dark:hover:bg-gray-700'}
+      />
     </nav>
   );
 };

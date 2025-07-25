@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import PostCard from './PostCard';
 import { Post } from '../types/post';
 import { useRouter } from 'next/navigation';
