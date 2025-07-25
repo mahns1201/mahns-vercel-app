@@ -6,6 +6,7 @@ import { Suspense } from 'react';
 import TagLoading from './Loading';
 import GoTo from '../../../components/GoTo';
 import SidebarTags from '../../../components/layouts/SidebarTags';
+import RowTags from '../../../components/layouts/RowTags';
 
 interface Params {
   params: Promise<{ tag: string }>;
@@ -31,7 +32,8 @@ const PostsByTagPage = async ({ params }: Params) => {
       <h1 className="my-2 pt-6 pb-8 md:my-5">#{tag}</h1>
       <Suspense fallback={<TagLoading />}>
         <div className="flex">
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
+            <RowTags />
             <Posts params={params} />
             <GoTo params={{ href: '/posts', content: '모든 게시물' }} />
           </div>
