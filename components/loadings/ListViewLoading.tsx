@@ -1,5 +1,9 @@
 const ListViewLoading = () => (
   <>
+    {/* 가로 태그 리스트 로딩 스켈레톤 */}
+    <div className="xl:hidden h-6 my-4 bg-gray rounded w-3/4" />
+
+    {/* 리스트 뷰 로딩 스켈레톤 */}
     <div className="flex">
       <div className="flex flex-col w-full sm:flex-row items-center gap-4 animate-pulse">
         <div className="w-full h-60 sm:w-54 sm:h-42 bg-gray rounded-md flex-shrink-0" />
@@ -16,6 +20,7 @@ const ListViewLoading = () => (
         </div>
       </div>
 
+      {/* 사이드바 태그 리스트 로딩 스켈레톤 */}
       <div className="hidden xl:block w-44 pt-6 ml-10 animate-pulse">
         <div className="h-6 bg-gray rounded w-20 mb-4" />
         <div className="space-y-2">
