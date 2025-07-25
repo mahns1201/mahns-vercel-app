@@ -53,3 +53,21 @@
     @apply dark:text-gray-300 font-bold absolute left-0 top-0;
   }
 }
+
+@layer components {
+  .bg-main {
+    @apply bg-white dark:bg-gray-950;
+  }
+
+  .bg-gray {
+    @apply bg-gray-200 dark:bg-gray-700;
+  }
+
+  .hover-bg-gray {
+    @apply cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700;
+  }
+
+  .border-gray {
+    @apply border-b border-gray-200 dark:border-gray-700;
+  }
+}

@@ -6,10 +6,7 @@ const Tags = async () => {
 
   return (
     <nav className="flex flex-col">
-      <TagList
-        tags={tags}
-        styles={'block py-1 hover:bg-gray-100 dark:hover:bg-gray-700'}
-      />
+      <TagList tags={tags} styles={'py-1 hover-bg-gray'} />
     </nav>
   );
 };
@@ -17,7 +14,7 @@ const Tags = async () => {
 const SidebarTags = () => {
   return (
     <aside className="hidden xl:block w-44 pt-6 ml-10">
-      <h3 className="border-b border-gray-300">태그</h3>
+      <h3 className="border-b border-gray">태그</h3>
       <Tags />
     </aside>
   );

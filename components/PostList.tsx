@@ -16,10 +16,10 @@ const PostList = ({ posts }: { posts: Post[] }) => {
   return (
     <>
       {posts.map((post) => (
-        <li key={post.slug} className="group cursor-pointer">
+        <li key={post.slug} className="group">
           <div
             onClick={() => handlePostClick(post.slug)}
-            className="block py-6 hover:bg-gray-100 dark:hover:bg-gray-700"
+            className="hover-bg-gray py-6"
             aria-label={`Read more: "${post.title}"`}
           >
             <PostCard post={post} />

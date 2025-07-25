@@ -49,7 +49,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="pl-[calc(100vw-100%)] bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
+      <body className="pl-[calc(100vw-100%)] bg-main">
         <GoogleAnalytics />
         <DarkModeProvider>
           <Suspense fallback={null}>
