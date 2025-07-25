@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 import { getPostsByTag } from '../../../lib/get-posts-by-tag';
 import PostList from '../../../components/PostList';
 import { Suspense } from 'react';
-import TagLoading from './Loading';
+import ListViewLoading from '../../../components/loadings/ListViewLoading';
 import GoTo from '../../../components/GoTo';
 import SidebarTags from '../../../components/layouts/SidebarTags';
 import RowTags from '../../../components/layouts/RowTags';
@@ -30,7 +30,7 @@ const PostsByTagPage = async ({ params }: Params) => {
   return (
     <>
       <h1 className="my-2 pt-6 pb-8 md:my-5">#{tag}</h1>
-      <Suspense fallback={<TagLoading />}>
+      <Suspense fallback={<ListViewLoading />}>
         <div className="flex">
           <div className="flex flex-col w-full">
             <RowTags />

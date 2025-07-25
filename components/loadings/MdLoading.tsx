@@ -1,6 +1,6 @@
-import SectionContainer from '../../../components/layouts/SectionContainer';
+import SectionContainer from "../layouts/SectionContainer";
 
-const PostLoading = () => (
+const MdLoading = () => (
   <SectionContainer>
     <div className="flex flex-col space-y-2 sm:space-y-5 my-2 pt-6 pb-8 md:my-5 animate-pulse">
       <div className="h-14 w-1/2 bg-gray rounded" />
@@ -19,4 +19,4 @@ const PostLoading = () => (
   </SectionContainer>
 );
 
-export default PostLoading;
+export default MdLoading;

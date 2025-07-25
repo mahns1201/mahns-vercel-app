@@ -1,7 +1,7 @@
 import { getPostBySlug } from '../../../lib/get-post-by-slug';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
-import PostLoading from './Loading';
+import MdLoading from '../../../components/loadings/MdLoading';
 import MdRender from './MdRender';
 import siteMetadata from '../../../data/metadata';
 import TagList from '../../../components/TagList';
@@ -62,7 +62,7 @@ const PostDetailPage = ({ params }: Params) => {
   return (
     <article>
       <SectionContainer>
-        <Suspense fallback={<PostLoading />}>
+        <Suspense fallback={<MdLoading />}>
           <Post params={params} />
         </Suspense>
       </SectionContainer>

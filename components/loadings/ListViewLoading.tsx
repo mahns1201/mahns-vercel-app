@@ -1,4 +1,4 @@
-const PostsLoading = () => (
+const ListViewLoading = () => (
   <>
     <div className="flex">
       <div className="flex flex-col w-full sm:flex-row items-center gap-4 animate-pulse">
@@ -28,4 +28,4 @@ const PostsLoading = () => (
   </>
 );
 
-export default PostsLoading;
+export default ListViewLoading;
