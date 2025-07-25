@@ -29,7 +29,7 @@ const AboutPage = () => {
         </p>
       </section>
 
-      <section className="mb-20">
+      <section>
         <h3 className="mb-3">口耳之學</h3>
         <p>
           “소인의 학문은 귀로 듣고 입으로 나간다”라는 말이 있습니다. 이 블로그는
