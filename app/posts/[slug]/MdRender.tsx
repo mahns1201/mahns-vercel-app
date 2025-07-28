@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 'use client';
 
 import { useDarkMode } from '../../../contexts/ThemeProvider';
@@ -25,7 +27,24 @@ const MdRender = ({ content }: { content: string }) => {
           }
         `}
       </style>
-      <ReactMarkdown>{content}</ReactMarkdown>
+      <ReactMarkdown
+        components={{
+          h1({ node, children }) {
+            const id = children.toString() || '';
+            return <h1 id={id}>{children}</h1>;
+          },
+          h2({ node, children }) {
+            const id = children.toString() || '';
+            return <h2 id={id}>{children}</h2>;
+          },
+          h3({ node, children }) {
+            const id = children.toString() || '';
+            return <h3 id={id}>{children}</h3>;
+          },
+        }}
+      >
+        {content}
+      </ReactMarkdown>
     </div>
   );
 };
