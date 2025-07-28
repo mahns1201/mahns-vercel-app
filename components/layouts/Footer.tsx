@@ -7,7 +7,7 @@ import siteMetadata from '../../data/metadata.js';
 const Footer = () => {
   return (
     <footer>
-      <div className="flex flex-col items-center py-6 space-y-4">
+      <div className="flex flex-col items-center py-10 space-y-4 mt-40">
         <div className="flex space-x-4">
           <Github />
           <Linkedin />
