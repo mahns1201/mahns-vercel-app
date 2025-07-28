@@ -42,15 +42,40 @@
     @apply cursor-pointer;
   }
 
+  .markdown-body ul,
+  .markdown-body ol,
+  .markdown-body li {
+    border: none !important;
+    @apply text-sm text-gray-900 dark:text-gray-300 leading-relaxed;
+  }
+
+  .markdown-body img,
+  .markdown-css img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .markdown-body ol {
-    @apply list-none pl-6;
+    list-style: decimal;
+    margin-left: 0.25rem;
   }
-  .markdown-body ol li {
-    @apply relative pl-3;
+  .markdown-body ol ol {
+    list-style: lower-alpha;
   }
-  .markdown-body ol li::before {
-    content: '•';
-    @apply dark:text-gray-300 font-bold absolute left-0 top-0;
+  .markdown-body ol ol ol {
+    list-style: lower-roman;
+  }
+
+  .markdown-body ul {
+    list-style: disc;
+    margin-left: 0.25rem;
+  }
+  .markdown-body ul ul {
+    list-style: circle;
+  }
+  .markdown-body ul ul ul {
+    list-style: square;
   }
 }
 

@@ -13,8 +13,15 @@ const MdRender = ({ content }: { content: string }) => {
     >
       <style>
         {`
+          .markdown-body h1 {
+            margin-top: 5rem;
+          }
           .markdown-body h2 {
+            margin-top: 3rem;
             border-bottom: none;
+          }
+          .markdown-body h3 {
+            margin-top: 2rem;
           }
         `}
       </style>
