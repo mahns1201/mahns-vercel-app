@@ -6,6 +6,7 @@ import MdRender from './MdRender';
 import siteMetadata from '../../../data/metadata';
 import TagList from '../../../components/TagList';
 import SectionContainer from '../../../components/layouts/SectionContainer';
+import TableOfContentRender from './TableOfContentRender';
 
 interface Params {
   params: Promise<{ slug: string }>;
@@ -52,6 +53,7 @@ const Post = async ({ params }) => {
         </div>
       </div>
       <div className="mt-6">
+        <TableOfContentRender tableOfContents={post.tableOfContents} />
         <MdRender content={post.content} />
       </div>
     </>
