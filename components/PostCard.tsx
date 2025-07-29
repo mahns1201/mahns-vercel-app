@@ -12,7 +12,7 @@ const PostCard = ({ post }) => {
         <h2>{post.title}</h2>
         <p>{post.summary.length > 150 ? `${post.summary}...` : post.summary}</p>
         <div className="flex flex-wrap gap-2">
-          <TagList tags={post.tags} styles="hover:underline" />
+          <TagList tags={post.tags} styles="hover:underline bg-gray px-2 rounded-full" />
         </div>
         <p className="text-right">{post.createdAt}</p>
       </div>
