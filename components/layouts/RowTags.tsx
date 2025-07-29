@@ -6,7 +6,12 @@ const Tags = async () => {
 
   return (
     <nav className="flex space-x-2 h-15 items-center">
-      <TagList tags={tags} styles={'py-1 hover-bg-gray whitespace-nowrap'} />
+      <TagList
+        tags={tags}
+        styles={
+          'py-1 hover-bg-gray whitespace-nowrap bg-gray px-2 rounded-full'
+        }
+      />
     </nav>
   );
 };
