@@ -8,6 +8,7 @@ import Analytics from '../components/seo/Analytics';
 import { Suspense } from 'react';
 import GoogleAnalytics from '../components/seo/GoogleAnalytics';
 import MainContainer from '../components/layouts/MainContainer';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE =
   process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE || '';
@@ -50,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="pl-[calc(100vw-100%)] bg-main">
+        <SpeedInsights />
         <GoogleAnalytics />
         <DarkModeProvider>
           <Suspense fallback={null}>
