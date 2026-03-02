@@ -1,5 +1,5 @@
 import metadata from '../../data/metadata';
-import Image from '/public/email.svg';
+import Image from 'next/image';
 
 const Email = ({ size = 24 }) => {
   return (
@@ -7,6 +7,7 @@ const Email = ({ size = 24 }) => {
       <Image
         width={size}
         height={size}
+        src="/email.svg"
         className="hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-700 dark:text-gray-200"
         alt="email"
       />

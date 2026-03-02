@@ -1,5 +1,5 @@
 import metadata from '../../data/metadata.js';
-import Image from '/public/linkedin.svg';
+import Image from 'next/image';
 
 const Linkedin = ({ size = 24 }) => {
   return (
@@ -7,6 +7,7 @@ const Linkedin = ({ size = 24 }) => {
       <Image
         width={size}
         height={size}
+        src="/linkedin.svg"
         className="hover:text-primary-500 dark:hover:text-primary-400 fill-current text-gray-700 dark:text-gray-200"
         alt="linkedin"
       />
