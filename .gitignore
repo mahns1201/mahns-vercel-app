@@ -31,4 +31,7 @@ yarn-error.log*
 .vercel
 
 # ides
-.idea/
+.idea
+
+# agents
+.claude/settings.json
