@@ -1,6 +1,7 @@
 'use client';
 
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
+import storage from '../utils/local-storage';
 
 const DarkModeContext = createContext<{
   darkMode: boolean;
@@ -10,6 +11,15 @@ const DarkModeContext = createContext<{
   toggleDarkMode: () => {},
 });
 
+const applyDarkClass = (isDark: boolean) => {
+  const root = document.documentElement;
+  if (isDark) {
+    root.classList.add('dark');
+  } else {
+    root.classList.remove('dark');
+  }
+};
+
 export const DarkModeProvider = ({
   children,
 }: {
@@ -17,7 +27,22 @@ export const DarkModeProvider = ({
 }) => {
   const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => setDarkMode((prev) => !prev);
+  useEffect(() => {
+    const stored = storage.get('darkMode');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = stored !== null ? stored === 'true' : prefersDark;
+    setDarkMode(isDark);
+    applyDarkClass(isDark);
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const next = !prev;
+      applyDarkClass(next);
+      storage.set('darkMode', String(next));
+      return next;
+    });
+  };
 
   return (
     <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
